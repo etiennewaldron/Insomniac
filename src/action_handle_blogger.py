@@ -1,6 +1,7 @@
 from functools import partial
 from random import shuffle
 
+import random
 import uiautomator
 
 from src.interaction_rect_checker import is_in_interaction_rect
@@ -172,6 +173,8 @@ def _interact_with_user(device,
         print("It's you, skip.")
         return False, False
 
+    likes_count = random.randint(1,3)
+    print("LIKES COUNT = " + str(likes_count))
     random_sleep()
 
     if not profile_filter.check_profile(device, username):
